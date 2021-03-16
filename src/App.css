@@ -1,38 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', arial;
+}
+
 .App {
-  text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.information,
+.employees {
   display: flex;
   flex-direction: column;
+  width: 100vw;
   align-items: center;
+  margin: 5px;
+}
+
+/* .information input { */
+/*   width: 300px; */
+/*   height: 50px; */
+/*   font-size: 20px; */
+/*   padding-left: 10px; */
+/* } */
+
+/* .btn { */
+/*   width: 320px; */
+/*   height: 50px; */
+/*   margin-top: 15px; */
+/* } */
+
+/* .btn:hover { */
+/*   cursor: pointer; */
+/*   opacity: 0.8; */
+/* } */
+
+.addShowContainer button {
+  margin: 10px;
+  width: 195px;
+  height: 56px;
+}
+
+.employeeList {
+  position: relative;
+  width: auto;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 20px;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.employeeList h3 {
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.addShow {
+  justify-content: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.updateDelete {
+  display: flex;
+  flex-direction: column;
+}
+
+.updateDelete button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 960px) {
+  .employeeList {
+    width: 50%;
+    align-items: center;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .employeeListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .updateDelete {
+    align-items: center;
   }
 }
