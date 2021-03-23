@@ -7,7 +7,34 @@ body {
   font-family: 'Roboto', arial;
 }
 
-.App {
+.register-status {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+.art {
+  display: none;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  position: relative;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
 }
 
 .information,
@@ -19,23 +46,10 @@ body {
   margin: 5px;
 }
 
-/* .information input { */
-/*   width: 300px; */
-/*   height: 50px; */
-/*   font-size: 20px; */
-/*   padding-left: 10px; */
-/* } */
-
-/* .btn { */
-/*   width: 320px; */
-/*   height: 50px; */
-/*   margin-top: 15px; */
-/* } */
-
-/* .btn:hover { */
-/*   cursor: pointer; */
-/*   opacity: 0.8; */
-/* } */
+.addShowContainer {
+  display: flex;
+  flex-direction: column;
+}
 
 .addShowContainer button {
   margin: 10px;
@@ -78,6 +92,34 @@ input:focus {
 }
 
 @media only screen and (min-width: 960px) {
+  .art {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .art img {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  .login {
+    display: grid;
+    grid-template-columns: 66% auto;
+    position: unset;
+  }
+
+  .login-container {
+    position: relative;
+  }
+
+  .login-content {
+    padding: 15px;
+    border-radius: 4px;
+  }
+
   .employeeList {
     width: 50%;
     align-items: center;
@@ -92,5 +134,9 @@ input:focus {
 
   .updateDelete {
     align-items: center;
+  }
+
+  .addShowContainer {
+    display: unset;
   }
 }
