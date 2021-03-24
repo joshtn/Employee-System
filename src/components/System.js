@@ -69,7 +69,7 @@ const System = () => {
       alert('Cannot have empty fields.')
       return
     }
-    Axios.post('http://localhost:3001/create', {
+    Axios.post('https://mysql-employee-system.herokuapp.com/create', {
       name: name,
       age: age,
       country: country,
@@ -85,21 +85,26 @@ const System = () => {
   }
 
   const getEmployees = () => {
-    Axios.get('http://localhost:3001/employees').then((response) => {
-      setEmployeeList(response.data)
-    })
-  }
-
-  const updateEmployeeWage = (id) => {
-    Axios.put('http://localhost:3001/update', { wage: newWage, id: id }).then(
+    Axios.get('https://mysql-employee-system.herokuapp.com/employees').then(
       (response) => {
-        getEmployees()
+        setEmployeeList(response.data)
       }
     )
   }
 
+  const updateEmployeeWage = (id) => {
+    Axios.put('https://mysql-employee-system.herokuapp.com/update', {
+      wage: newWage,
+      id: id,
+    }).then((response) => {
+      getEmployees()
+    })
+  }
+
   const deleteEmployee = (id) => {
-    Axios.delete(`http://localhost:3001/delete/${id}`).then((response) => {
+    Axios.delete(
+      `https://mysql-employee-system.herokuapp.com/delete/${id}`
+    ).then((response) => {
       setEmployeeList(
         employeeList.filter((val) => {
           return val.id !== id
@@ -110,24 +115,28 @@ const System = () => {
 
   const logout = () => {
     console.log('logout')
-    Axios.get('http://localhost:3001/logout').then((response) => {
-      if (response.data.loggedIn === false) {
-        setLoggedOut(true)
-      } else {
-        console.log('not logged in')
+    Axios.get('https://mysql-employee-system.herokuapp.com/logout').then(
+      (response) => {
+        if (response.data.loggedIn === false) {
+          setLoggedOut(true)
+        } else {
+          console.log('not logged in')
+        }
       }
-    })
+    )
   }
 
   useEffect(() => {
-    Axios.get('http://localhost:3001/login').then((response) => {
-      if (response.data.loggedIn === true) {
-        setLoginStatus(response.data.user[0].username)
-      } else {
-        console.log('please log in first!')
-        history.push('/')
+    Axios.get('https://mysql-employee-system.herokuapp.com/login').then(
+      (response) => {
+        if (response.data.loggedIn === true) {
+          setLoginStatus(response.data.user[0].username)
+        } else {
+          console.log('please log in first!')
+          history.push('/')
+        }
       }
-    })
+    )
   })
 
   if (loggedOut) {

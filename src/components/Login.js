@@ -46,7 +46,7 @@ const Login = () => {
 
   const login = (e) => {
     e.preventDefault()
-    Axios.post('http://localhost:3001/login', {
+    Axios.post('https://mysql-employee-system.herokuapp.com/login', {
       username: usernameLogin,
       password: passwordLogin,
     }).then((response) => {

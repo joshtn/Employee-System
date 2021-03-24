@@ -46,7 +46,7 @@ const Register = () => {
       alert('Fields cannot be empty.')
       return
     }
-    Axios.post('http://localhost:3001/register', {
+    Axios.post('https://mysql-employee-system.herokuapp.com/register', {
       username: usernameReg,
       password: passwordReg,
     }).then((response) => {
