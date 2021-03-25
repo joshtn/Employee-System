@@ -126,18 +126,18 @@ const System = () => {
     )
   }
 
-  useEffect(() => {
-    Axios.get('https://mysql-employee-system.herokuapp.com/login').then(
-      (response) => {
-        if (response.data.loggedIn === true) {
-          setLoginStatus(response.data.user[0].username)
-        } else {
-          console.log('please log in first!')
-          history.push('/')
-        }
-      }
-    )
-  })
+  // useEffect(() => {
+  //   Axios.get('https://mysql-employee-system.herokuapp.com/login').then(
+  //     (response) => {
+  //       if (response.data.loggedIn === true) {
+  //         setLoginStatus(response.data.user[0].username)
+  //       } else {
+  //         console.log('please log in first!')
+  //         history.push('/')
+  //       }
+  //     }
+  //   )
+  // })
 
   if (loggedOut) {
     return <Redirect to="/" push={true} />
