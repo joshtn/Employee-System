@@ -131,7 +131,8 @@ const System = () => {
       (response) => {
         if (response.data.loggedIn === true) {
           setLoginStatus(response.data.user[0].username)
-        // } else {
+        }
+        // else {
         //   console.log('please log in first!')
         //   history.push('/')
         // }
