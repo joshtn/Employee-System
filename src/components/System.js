@@ -127,9 +127,12 @@ const System = () => {
   }
 
   useEffect(() => {
+    console.log('useeffect b4')
     Axios.get('https://mysql-employee-system.herokuapp.com/login').then(
       (response) => {
+        console.log('useeffect resp')
         if (response.data.loggedIn === true) {
+          console.log('useeffect inside inside')
           setLoginStatus(response.data.user[0].username)
         }
         // else {
