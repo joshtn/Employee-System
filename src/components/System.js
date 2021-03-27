@@ -161,7 +161,7 @@ const System = () => {
           Log out{' '}
         </Button>
         <Typography className={classes.typoStyle} variant="h2">
-          Welcome {loginStatus}!
+          Welcome!
         </Typography>
         <TextField
           className={classes.inputTextFieldStyle}
