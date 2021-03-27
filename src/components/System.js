@@ -115,34 +115,35 @@ const System = () => {
   }
 
   const logout = () => {
-    console.log('logout')
-    Axios.get('https://mysql-employee-system.herokuapp.com/logout').then(
-      (response) => {
-        if (response.data.loggedIn === false) {
-          setLoggedOut(true)
-        } else {
-          console.log('not logged in')
-        }
-      }
-    )
+    // console.log('logout')
+    // Axios.get('https://mysql-employee-system.herokuapp.com/logout').then(
+    //   (response) => {
+    //     if (response.data.loggedIn === false) {
+    //       setLoggedOut(true)
+    //     } else {
+    //       console.log('not logged in')
+    //     }
+    //   }
+    // )
+    setLoggedOut(true)
   }
 
-  useEffect(() => {
-    console.log('useeffect b4')
-    Axios.get('https://mysql-employee-system.herokuapp.com/login').then(
-      (response) => {
-        console.log('useeffect resp')
-        if (response.data.loggedIn === true) {
-          console.log('useeffect inside inside')
-          setLoginStatus(response.data.user[0].username)
-        }
-        // else {
-        //   console.log('please log in first!')
-        //   history.push('/')
-        // }
-      }
-    )
-  })
+  // useEffect(() => {
+  //   console.log('useeffect b4')
+  //   Axios.get('https://mysql-employee-system.herokuapp.com/login').then(
+  //     (response) => {
+  //       console.log('useeffect resp')
+  //       if (response.data.loggedIn === true) {
+  //         console.log('useeffect inside inside')
+  //         setLoginStatus(response.data.user[0].username)
+  //       }
+  //       // else {
+  //       //   console.log('please log in first!')
+  //       //   history.push('/')
+  //       // }
+  //     }
+  //   )
+  // })
 
   if (loggedOut) {
     return <Redirect to="/" push={true} />
